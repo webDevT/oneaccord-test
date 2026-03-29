@@ -91,12 +91,22 @@
   function initStickyHeader() {
     var header = document.querySelector(".header");
     if (!header) return;
-    function onScroll() {
-      if (window.scrollY > 1) header.classList.add("sticky");
+    var isSticky = false;
+    var rafId = null;
+    function applyStickyState() {
+      rafId = null;
+      var should = window.scrollY > 1;
+      if (should === isSticky) return;
+      isSticky = should;
+      if (should) header.classList.add("sticky");
       else header.classList.remove("sticky");
     }
+    function onScroll() {
+      if (rafId != null) return;
+      rafId = requestAnimationFrame(applyStickyState);
+    }
     window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    applyStickyState();
   }
 
   function initCookiesBanner() {
@@ -208,13 +218,23 @@
 
     var normalizeTeHandler = null;
     var normalizeFallbackId = null;
+    var viewportWCache = null;
+
+    function resetViewportWidthCache() {
+      viewportWCache = null;
+    }
+
+    function viewportWidthOnce() {
+      if (viewportWCache === null) viewportWCache = window.innerWidth;
+      return viewportWCache;
+    }
 
     function isMobileViewport() {
-      return window.innerWidth < BP_MOBILE;
+      return viewportWidthOnce() < BP_MOBILE;
     }
 
     function slidesToShow() {
-      var w = window.innerWidth;
+      var w = viewportWidthOnce();
       if (w < BP_MOBILE) return 1;
       if (w < BP_TABLET) return 2;
       return 3;
@@ -363,6 +383,7 @@
     }
 
     function updateDragTransform() {
+      resetViewportWidthCache();
       var layout = getTrackLayout();
       if (!layout) return;
       var tx = Math.round(-leftPos * layout.slideW + layout.centerShift + dragOffsetPx);
@@ -371,6 +392,7 @@
     }
 
     function render(animated) {
+      resetViewportWidthCache();
       var st = slidesToShow();
       if (st !== builtSt) {
         var pi = Math.min(pageIndex(), maxIndex());
