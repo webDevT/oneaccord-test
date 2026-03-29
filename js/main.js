@@ -461,7 +461,10 @@
             var li = document.createElement("li");
             var btn = document.createElement("button");
             btn.type = "button";
-            btn.textContent = String(dotPage + 1);
+            btn.setAttribute(
+              "aria-label",
+              "Go to slide " + (dotPage + 1) + " of " + pages
+            );
             btn.addEventListener("click", function () {
               var st2 = slidesToShow();
               leftPos = infiniteMode ? st2 + dotPage : dotPage;
