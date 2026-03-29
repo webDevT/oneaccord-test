@@ -367,12 +367,14 @@
   }
 
   onReady(function () {
-    initFaq();
-    initCustomSelect();
-    initSubjectFields();
-    initNumberInputs();
-    initTooltips();
     initVideoModal();
-    scheduleIdle(initReviewTyping, 2500);
+    scheduleIdle(function () {
+      initFaq();
+      initCustomSelect();
+      initSubjectFields();
+      initNumberInputs();
+      initTooltips();
+      scheduleIdle(initReviewTyping, 2500);
+    }, 1500);
   });
 })();

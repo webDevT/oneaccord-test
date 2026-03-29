@@ -12,6 +12,28 @@
     <title>OneAccord</title>
 
     <link
+      rel="preload"
+      href="fonts/highlandgothicflf.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/barlow-semi-condensed-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/barlow-semi-condensed-latin-500-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
       rel="icon"
       type="image/png"
       sizes="16x16"
@@ -52,7 +74,12 @@
       <div class="container-fluid container-fluid--s container-fluid--header">
         <div class="logo">
           <a href="index.html">
-            <img src="img/logo.svg" alt="OneAccord logo" />
+            <img
+              src="img/logo.svg"
+              alt="OneAccord logo"
+              width="300"
+              height="97"
+            />
           </a>
         </div>
 
@@ -99,15 +126,15 @@
 
           <div class="header__social">
             <a href="#" aria-label="OneAccord on Facebook">
-              <img src="img/facebook.svg" alt="" />
+              <img src="img/facebook.svg" alt="" width="36" height="36" />
             </a>
 
             <a href="#" aria-label="OneAccord on Instagram">
-              <img src="img/instagram.svg" alt="" />
+              <img src="img/instagram.svg" alt="" width="36" height="36" />
             </a>
 
             <a href="#" aria-label="OneAccord on YouTube">
-              <img src="img/youtube.svg" alt="" />
+              <img src="img/youtube.svg" alt="" width="36" height="36" />
             </a>
           </div>
         </div>
@@ -159,7 +186,16 @@
                 img/photo-300.webp 300w,
                 img/photo-380.webp 380w,
                 img/photo-400.webp 400w,
-
+              "
+              sizes="(max-width: 767px) 63.2vw, (max-width: 992px) 45vw, (max-width: 1220px) 25vw, 250px"
+            />
+            <source
+              type="image/png"
+              srcset="
+                img/photo-256.png 256w,
+                img/photo-300.png 300w,
+                img/photo-380.png 380w,
+                img/photo-400.png 400w,
               "
               sizes="(max-width: 767px) 63.2vw, (max-width: 992px) 45vw, (max-width: 1220px) 25vw, 250px"
             />
@@ -169,6 +205,8 @@
               height="250"
               alt="Peoples logo"
               class="main-screen__photo"
+              fetchpriority="low"
+              decoding="async"
             />
           </picture>
           <picture>
@@ -181,20 +219,38 @@
               "
               sizes="(max-width: 767px) 31.8vw, (max-width: 992px) 48vw, (max-width: 1220px) 25vw, 341px"
             />
+            <source
+              type="image/png"
+              srcset="
+                img/mode-screen-256.png 256w,
+                img/mode-screen-400.png 400w,
+                img/mode-screen-501.png 501w
+              "
+              sizes="(max-width: 767px) 31.8vw, (max-width: 992px) 48vw, (max-width: 1220px) 25vw, 341px"
+            />
             <img
               src="img/mode-screen-256.png"
-              width="256"
-              height="502"
+              width="341"
+              height="668"
               alt="Phone screen"
               class="main-screen__screen"
+              fetchpriority="high"
+              decoding="sync"
             />
-          </picture>
-          <img src="img/bable0.svg" alt="bable" class="main-screen__bables" />
+          </picture>          <img
+            src="img/bable0.svg"
+            alt="bable"
+            class="main-screen__bables"
+            width="440"
+            height="414"
+          />
 
           <img
             src="img/bables01.svg"
             alt="bable"
             class="main-screen__bables2"
+            width="185"
+            height="173"
           />
         </div>
 
@@ -281,11 +337,23 @@
             What our <br />
             customers say
           </h2>
-          <img src="img/arrow2.svg" alt="" class="reviews__arrow" />
+          <img
+            src="img/arrow2.svg"
+            alt=""
+            class="reviews__arrow"
+            width="115"
+            height="45"
+          />
         </div>
 
         <div class="reviews__content">
-          <img src="img/quote.svg" alt="" class="quote-image" />
+          <img
+            src="img/quote.svg"
+            alt=""
+            class="quote-image"
+            width="70"
+            height="58"
+          />
           <div class="review__text-wrapper">
             <div
               class="review__text"
@@ -334,7 +402,16 @@
 
         <div class="how-it-works__row">
           <div class="how-it-works__item">
-            <img src="img/hw1.webp" alt="" class="how-it-works__image" />
+            <picture>
+              <source srcset="img/hw1.webp" type="image/webp" />
+              <img
+                src="img/hw1.png"
+                alt=""
+                class="how-it-works__image"
+                width="461"
+                height="280"
+              />
+            </picture>
 
             <div class="how-it-works__item-content">
               <div class="how-it-works__title">For your congregation</div>
@@ -355,7 +432,16 @@
           </div>
 
           <div class="how-it-works__item">
-            <img src="img/hw2.webp" alt="" class="how-it-works__image" />
+            <picture>
+              <source srcset="img/hw2.webp" type="image/webp" />
+              <img
+                src="img/hw2.png"
+                alt=""
+                class="how-it-works__image"
+                width="461"
+                height="280"
+              />
+            </picture>
 
             <div class="how-it-works__item-content">
               <div class="how-it-works__title">For your team</div>
@@ -395,6 +481,8 @@
               src="img/quote-white.svg"
               alt=""
               class="single-testimonial__quote"
+              width="50"
+              height="40"
             />
             <div class="single-testimonial__text">
               I have been actively searching for well over a year, speaking to
@@ -417,11 +505,13 @@
                 <picture>
                   <source
                     type="image/webp"
-                    srcset="img/mike-morrison-collin-creek.webp"
+                    srcset="img/mike-morrison-collin-creek-70.webp"
                   />
                   <img
-                    src="img/mike-morrison-collin-creek.png"
+                    src="img/mike-morrison-collin-creek-70.png"
                     alt=""
+                    width="70"
+                    height="70"
                   />
                 </picture>
               </div>
@@ -446,27 +536,27 @@
     <section class="flags-section">
       <div class="flags-wrapper" id="wrapper">
         <div class="flags-track" id="track">
-          <img class="flag" src="img/flag-spanish.svg" alt="" />
-          <img class="flag" src="img/flag-chinese.svg" alt="" />
-          <img class="flag" src="img/flag-french.svg" alt="" />
-          <img class="flag" src="img/flag-brazil.svg" alt="" />
-          <img class="flag" src="img/flag-portuguese.svg" alt="" />
-          <img class="flag" src="img/flag-cantonese.svg" alt="" />
-          <img class="flag" src="img/flag-russian.svg" alt="" />
-          <img class="flag" src="img/flag-farsi.svg" alt="" />
-          <img class="flag" src="img/flag-korean.svg" alt="" />
-          <img class="flag" src="img/flag-finnish.svg" alt="" />
-          <img class="flag" src="img/flag-french.svg" alt="" />
-          <img class="flag" src="img/flag-ukrainian.svg" alt="" />
-          <img class="flag" src="img/flag-swahili.svg" alt="" />
-          <img class="flag" src="img/flag-romanian.svg" alt="" />
-          <img class="flag" src="img/flag-dutch.svg" alt="" />
-          <img class="flag" src="img/flag-english.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-spanish.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-chinese.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-french.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-brazil.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-portuguese.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-cantonese.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-russian.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-farsi.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-korean.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-finnish.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-french.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-ukrainian.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-swahili.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-romanian.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-dutch.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-english.svg" alt="" />
 
-          <img class="flag" src="img/flag-filipino.svg" alt="" />
-          <img class="flag" src="img/flag-nepalese.svg" alt="" />
-          <img class="flag" src="img/flag-haiti.svg" alt="" />
-          <img class="flag" src="img/flag-hindi.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-filipino.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-nepalese.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-haiti.svg" alt="" />
+          <img class="flag" width="55" height="55" src="img/flag-hindi.svg" alt="" />
         </div>
       </div>
 
@@ -485,7 +575,12 @@
         <div class="why-choose-us__row">
           <div class="why-choose-us__header">
             <div class="why-choose-us__icon">
-              <img src="img/built-by-church-interpreters.svg" alt="" />
+              <img
+                src="img/built-by-church-interpreters.svg"
+                alt=""
+                width="140"
+                height="140"
+              />
             </div>
             <div class="why-choose-us__title">Built by church interpreters</div>
           </div>
@@ -507,11 +602,19 @@
         <div class="why-choose-us__row why-choose-us__row--reverce">
           <div class="why-choose-us__header">
             <div class="why-choose-us__icon">
-              <img src="img/regular-quality-checks.svg" alt="" class="" />
+              <img
+                src="img/regular-quality-checks.svg"
+                alt=""
+                class=""
+                width="140"
+                height="140"
+              />
               <img
                 src="img/regular-quality-checks-white.svg"
                 alt=""
                 class="mobile-icon"
+                width="66"
+                height="65"
               />
             </div>
             <div class="why-choose-us__title">Regular Quality Checks</div>
@@ -538,7 +641,12 @@
         <div class="why-choose-us__row">
           <div class="why-choose-us__header">
             <div class="why-choose-us__icon">
-              <img src="img/dedicated-audio-support.svg" alt="" />
+              <img
+                src="img/dedicated-audio-support.svg"
+                alt=""
+                width="162"
+                height="173"
+              />
             </div>
             <div class="why-choose-us__title">Dedicated audio support</div>
           </div>
@@ -573,11 +681,18 @@
         <div class="why-choose-us__row why-choose-us__row--reverce">
           <div class="why-choose-us__header">
             <div class="why-choose-us__icon">
-              <img src="img/designed-to-make-your-life-easier.svg" alt="" />
+              <img
+                src="img/designed-to-make-your-life-easier.svg"
+                alt=""
+                width="106"
+                height="140"
+              />
               <img
                 src="img/designed-to-make-your-life-easier-white.svg"
                 alt=""
                 class="mobile-icon"
+                width="49"
+                height="65"
               />
             </div>
             <div class="why-choose-us__title">
@@ -606,7 +721,12 @@
         <div class="why-choose-us__row">
           <div class="why-choose-us__header">
             <div class="why-choose-us__icon">
-              <img src="img/high-quality-voices.svg" alt="" />
+              <img
+                src="img/high-quality-voices.svg"
+                alt=""
+                width="173"
+                height="141"
+              />
             </div>
             <div class="why-choose-us__title">High-quality voices</div>
           </div>
@@ -638,11 +758,18 @@
         <div class="why-choose-us__row why-choose-us__row--reverce">
           <div class="why-choose-us__header">
             <div class="why-choose-us__icon">
-              <img src="img/we-been-there.svg" alt="" />
+              <img
+                src="img/we-been-there.svg"
+                alt=""
+                width="192"
+                height="173"
+              />
               <img
                 src="img/we-been-there-white.svg"
                 alt=""
                 class="mobile-icon"
+                width="72"
+                height="63"
               />
             </div>
             <div class="why-choose-us__title">
@@ -685,7 +812,7 @@
         <div class="why-choose-us__row">
           <div class="why-choose-us__header">
             <div class="why-choose-us__icon">
-              <img src="img/msv.svg" alt="" />
+              <img src="img/msv.svg" alt="" width="140" height="140" />
             </div>
             <div class="why-choose-us__title">Multi-site churches welcome</div>
           </div>
@@ -726,6 +853,8 @@
               src="img/quote-white.svg"
               alt=""
               class="single-testimonial__quote"
+              width="50"
+              height="40"
             />
             <div class="single-testimonial__text">
               Our church had seen an increase in various culture groups
@@ -743,7 +872,12 @@
 
             <div class="testimonials-single__footer">
               <div class="testimonials-single__photo">
-                <img src="img/mike-engbers.jpg" alt="" />
+                <img
+                  src="img/mike-engbers-70.jpg"
+                  alt=""
+                  width="70"
+                  height="70"
+                />
               </div>
 
               <div class="testimonials-single__info">
@@ -767,13 +901,19 @@
 
         <div class="features__list">
           <div class="features__item">
-            <img
-              src="img/no-download-required.webp"
-              alt="No download requested image"
-              class="features__item-img"
-              width="298"
-              height="170"
-            />
+            <picture>
+              <source
+                srcset="img/no-download-required.webp"
+                type="image/webp"
+              />
+              <img
+                src="img/no-download-required.png"
+                alt="No download requested image"
+                class="features__item-img"
+                width="350"
+                height="235"
+              />
+            </picture>
             <div class="features__item-content">
               <div class="features__item-content-text">
                 <h3 class="h3">No download required</h3>
@@ -786,13 +926,16 @@
           </div>
 
           <div class="features__item">
-            <img
-              src="img/custom-branded.webp"
-              alt="branded image"
-              class="features__item-img"
-              width="298"
-              height="170"
-            />
+            <picture>
+              <source srcset="img/custom-branded.webp" type="image/webp" />
+              <img
+                src="img/custom-branded.png"
+                alt="branded image"
+                class="features__item-img"
+                width="350"
+                height="235"
+              />
+            </picture>
             <div class="features__item-content">
               <div class="features__item-content-text">
                 <h3 class="h3">Branded</h3>
@@ -802,13 +945,16 @@
           </div>
 
           <div class="features__item">
-            <img
-              src="img/church.webp"
-              alt="church image"
-              class="features__item-img"
-              width="298"
-              height="170"
-            />
+            <picture>
+              <source srcset="img/church.webp" type="image/webp" />
+              <img
+                src="img/church.png"
+                alt="church image"
+                class="features__item-img"
+                width="350"
+                height="234"
+              />
+            </picture>
             <div class="features__item-content">
               <div class="features__item-content-text">
                 <h3 class="h3">Trained for a church context</h3>
@@ -822,13 +968,19 @@
           </div>
 
           <div class="features__item">
-            <img
-              src="img/written-and-audio.webp"
-              alt="AI image"
-              class="features__item-img"
-              width="298"
-              height="170"
-            />
+            <picture>
+              <source
+                srcset="img/written-and-audio.webp"
+                type="image/webp"
+              />
+              <img
+                src="img/written-and-audio.png"
+                alt="AI image"
+                class="features__item-img"
+                width="350"
+                height="236"
+              />
+            </picture>
             <div class="features__item-content">
               <div class="features__item-content-text">
                 <h3 class="h3">Written and audio translation</h3>
@@ -838,13 +990,16 @@
           </div>
 
           <div class="features__item">
-            <img
-              src="img/moderation.webp"
-              alt="image with edit icons"
-              class="features__item-img"
-              width="298"
-              height="170"
-            />
+            <picture>
+              <source srcset="img/moderation.webp" type="image/webp" />
+              <img
+                src="img/moderation.png"
+                alt="image with edit icons"
+                class="features__item-img"
+                width="350"
+                height="235"
+              />
+            </picture>
             <div class="features__item-content">
               <div class="features__item-content-text">
                 <h3 class="h3">Moderation</h3>
@@ -858,13 +1013,16 @@
           </div>
 
           <div class="features__item">
-            <img
-              src="img/transcripts.webp"
-              alt="transcription image"
-              class="features__item-img"
-              width="298"
-              height="170"
-            />
+            <picture>
+              <source srcset="img/transcripts.webp" type="image/webp" />
+              <img
+                src="img/transcripts.png"
+                alt="transcription image"
+                class="features__item-img"
+                width="350"
+                height="234"
+              />
+            </picture>
             <div class="features__item-content">
               <div class="features__item-content-text">
                 <h3 class="h3">Download transcripts</h3>
@@ -906,8 +1064,20 @@
             </div>
           </div>
 
-          <img src="img/bable7.svg" alt="bable image" class="bable3" />
-          <img src="img/bable8.svg" alt="bable image" class="bable4" />
+          <img
+            src="img/bable7.svg"
+            alt="bable image"
+            class="bable3"
+            width="586"
+            height="586"
+          />
+          <img
+            src="img/bable8.svg"
+            alt="bable image"
+            class="bable4"
+            width="143"
+            height="134"
+          />
         </div>
       </div>
     </section>
@@ -924,27 +1094,27 @@
               <!-- start row 1 -->
               <div class="languages-row languages-row--1">
                 <div class="languages-item">
-                  <img src="img/flag-south-africa.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-south-africa.svg" alt="" />
                   Afrikaans
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-amharic.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-amharic.svg" alt="" />
                   Amharic
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-arabic.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-arabic.svg" alt="" />
                   Arabic
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-armenia.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-armenia.svg" alt="" />
                   Armenian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-bengali.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-bengali.svg" alt="" />
                   Bengali
                 </div>
               </div>
@@ -953,26 +1123,26 @@
               <!-- start row 2 -->
               <div class="languages-row languages-row--2">
                 <div class="languages-item">
-                  <img src="img/flag-bulgarian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-bulgarian.svg" alt="" />
                   Bulgarian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-burmese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-burmese.svg" alt="" />
                   Burmese
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-cantonese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-cantonese.svg" alt="" />
                   Cantonese
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-chinese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-chinese.svg" alt="" />
                   Chinese
                 </div>
                 <div class="languages-item">
-                  <img src="img/flag-croatian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-croatian.svg" alt="" />
                   Croatian
                 </div>
               </div>
@@ -981,31 +1151,31 @@
               <!-- start row 3 -->
               <div class="languages-row languages-row--3">
                 <div class="languages-item">
-                  <img src="img/flag-chinese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-chinese.svg" alt="" />
                   Czech
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-danish.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-danish.svg" alt="" />
                   Danish
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-dutch.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-dutch.svg" alt="" />
                   Dutch
                 </div>
                 <div class="languages-item">
-                  <img src="img/flag-english.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-english.svg" alt="" />
                   English
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-farsi.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-farsi.svg" alt="" />
                   Farsi
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-filipino.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-filipino.svg" alt="" />
                   Filipino
                 </div>
               </div>
@@ -1014,32 +1184,32 @@
               <!-- start row 4 -->
               <div class="languages-row languages-row--4">
                 <div class="languages-item">
-                  <img src="img/flag-finnish.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-finnish.svg" alt="" />
                   Finnish
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-french.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-french.svg" alt="" />
                   French
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-german.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-german.svg" alt="" />
                   German
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-greek.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-greek.svg" alt="" />
                   Greek
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-gujarati.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-gujarati.svg" alt="" />
                   Gujarati
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-haiti.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-haiti.svg" alt="" />
                   Haitian Creole
                 </div>
               </div>
@@ -1048,32 +1218,32 @@
               <!-- start row 5 -->
               <div class="languages-row languages-row--5">
                 <div class="languages-item">
-                  <img src="img/flag-hebrew.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-hebrew.svg" alt="" />
                   Hebrew
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-hindi.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-hindi.svg" alt="" />
                   Hindi
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-hmong.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-hmong.svg" alt="" />
                   Hmong-Daw
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-hungarian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-hungarian.svg" alt="" />
                   Hungarian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-indonesian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-indonesian.svg" alt="" />
                   Indonesian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-italian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-italian.svg" alt="" />
                   Italian
                 </div>
               </div>
@@ -1082,32 +1252,32 @@
               <!-- start row 6 -->
               <div class="languages-row languages-row--6">
                 <div class="languages-item">
-                  <img src="img/flag-japanese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-japanese.svg" alt="" />
                   Japanese
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-cambodia.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-cambodia.svg" alt="" />
                   Khmer
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-rwanda.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-rwanda.svg" alt="" />
                   Kinyarwanda
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-korean.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-korean.svg" alt="" />
                   Korean
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-lithuania.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-lithuania.svg" alt="" />
                   Lithuanian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-hindi.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-hindi.svg" alt="" />
                   Malayalam
                 </div>
               </div>
@@ -1116,27 +1286,27 @@
               <!-- star row 8 -->
               <div class="languages-row languages-row--8">
                 <div class="languages-item">
-                  <img src="img/flag-nepalese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-nepalese.svg" alt="" />
                   Nepali
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-norwegian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-norwegian.svg" alt="" />
                   Norwegian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-pashto.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-pashto.svg" alt="" />
                   Pashto
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-polish.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-polish.svg" alt="" />
                   Polish
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-brazil.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-brazil.svg" alt="" />
                   Portuguese (BR)
                 </div>
               </div>
@@ -1146,27 +1316,27 @@
               <!-- start row 9 -->
               <div class="languages-row languages-row--9">
                 <div class="languages-item">
-                  <img src="img/flag-portuguese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-portuguese.svg" alt="" />
                   Portuguese (PT)
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-hindi.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-hindi.svg" alt="" />
                   Punjabi
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-romanian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-romanian.svg" alt="" />
                   Romanian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-russian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-russian.svg" alt="" />
                   Russian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-serbia.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-serbia.svg" alt="" />
                   Serbian
                 </div>
               </div>
@@ -1174,58 +1344,58 @@
 
               <div class="languages-row languages-row--10">
                 <div class="languages-item">
-                  <img src="img/flag-somali.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-somali.svg" alt="" />
                   Somali
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-spanish.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-spanish.svg" alt="" />
                   Spanish
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-swahili.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-swahili.svg" alt="" />
                   Swahili
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-swedish.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-swedish.svg" alt="" />
                   Swedish
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-tamil.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-tamil.svg" alt="" />
                   Tamil
                 </div>
                 <div class="languages-item">
-                  <img src="img/flag-hindi.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-hindi.svg" alt="" />
                   Telugu
                 </div>
               </div>
 
               <div class="languages-row languages-row--11">
                 <div class="languages-item">
-                  <img src="img/flag-thailand.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-thailand.svg" alt="" />
                   Thai
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-turkish.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-turkish.svg" alt="" />
                   Turkish
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-ukrainian.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-ukrainian.svg" alt="" />
                   Ukrainian
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-urdu.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-urdu.svg" alt="" />
                   Urdu
                 </div>
 
                 <div class="languages-item">
-                  <img src="img/flag-vietnamese.svg" alt="" />
+                  <img width="15" height="15" src="img/flag-vietnamese.svg" alt="" />
                   Vietnamese
                 </div>
               </div>
@@ -1260,8 +1430,29 @@
         <div class="models-row">
           <div class="models-col">
             <div class="models-image-wrapper">
-              <img src="img/speaker.webp" alt="" class="models__photo" />
-              <img src="img/mode-screen-501.webp" alt="" class="models__screen" />
+              <picture>
+                <source srcset="img/speaker.webp" type="image/webp" />
+                <img
+                  src="img/speaker.png"
+                  alt=""
+                  class="models__photo"
+                  width="300"
+                  height="300"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="img/mode-screen-501.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="img/mode-screen-501.png"
+                  alt=""
+                  class="models__screen"
+                  width="250"
+                  height="490"
+                />
+              </picture>
               <div class="models__circle"></div>
             </div>
 
@@ -1275,16 +1466,32 @@
 
           <div class="models-col">
             <div class="models-image-wrapper models-image-wrapper--reverse">
-              <img
-                src="img/conversation-mode.webp"
-                alt=""
-                class="models__photo"
-              />
-              <img
-                src="img/conversation-mode-screen.webp"
-                alt=""
-                class="models__screen"
-              />
+              <picture>
+                <source
+                  srcset="img/conversation-mode.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="img/conversation-mode.png"
+                  alt=""
+                  class="models__photo"
+                  width="300"
+                  height="300"
+                />
+              </picture>
+              <picture>
+                <source
+                  srcset="img/conversation-mode-screen.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="img/conversation-mode-screen.png"
+                  alt=""
+                  class="models__screen"
+                  width="250"
+                  height="490"
+                />
+              </picture>
               <div class="models__circle"></div>
             </div>
 
@@ -1313,6 +1520,8 @@
               src="img/quote-white.svg"
               alt=""
               class="single-testimonial__quote"
+              width="50"
+              height="40"
             />
             <div class="single-testimonial__text">
               OneAccord has been a gamechanger for our church. We are an
@@ -1325,7 +1534,12 @@
 
             <div class="testimonials-single__footer">
               <div class="testimonials-single__photo">
-                <img src="img/majesty-house.png" alt="" />
+                <img
+                  src="img/majesty-house-70.png"
+                  alt=""
+                  width="70"
+                  height="70"
+                />
               </div>
 
               <div class="testimonials-single__info">
@@ -1524,11 +1738,35 @@
     <section class="contact" id="contact">
       <div class="container-fluid container-fluid--xs">
         <div class="contact__content">
-          <img src="img/bable2.svg" alt="bable image" class="bable2" />
-          <img src="img/bable1.svg" alt="bable image" class="bable1" />
+          <img
+            src="img/bable2.svg"
+            alt="bable image"
+            class="bable2"
+            width="212"
+            height="231"
+          />
+          <img
+            src="img/bable1.svg"
+            alt="bable image"
+            class="bable1"
+            width="328"
+            height="312"
+          />
 
-          <img src="img/bable3.svg" alt="bable image" class="bable3" />
-          <img src="img/bable4.svg" alt="bable image" class="bable4" />
+          <img
+            src="img/bable3.svg"
+            alt="bable image"
+            class="bable3"
+            width="693"
+            height="692"
+          />
+          <img
+            src="img/bable4.svg"
+            alt="bable image"
+            class="bable4"
+            width="293"
+            height="292"
+          />
 
           <div class="contact__header">
             <div class="contact__title">Contact Us</div>
@@ -1575,10 +1813,21 @@
 
                       <!-- start tooltip -->
                       <div class="tooltip-wrapper">
-                        <img src="img/info.svg" alt="" class="info-icon" />
+                        <img
+                          src="img/info.svg"
+                          alt=""
+                          class="info-icon"
+                          width="13"
+                          height="13"
+                        />
                         <div class="tooltip">
                           <div class="close-tooltip">
-                            <img src="img/close.svg" alt="" />
+                            <img
+                              src="img/close.svg"
+                              alt=""
+                              width="12"
+                              height="12"
+                            />
                           </div>
 
                           This is how many translation hours are needed. You can
@@ -1592,11 +1841,11 @@
 
                     <div class="custom-number-input">
                       <button class="arrow-up">
-                        <img src="img/up.svg" alt="" />
+                        <img src="img/up.svg" alt="" width="10" height="7" />
                       </button>
                       <input type="number" />
                       <button class="arrow-down">
-                        <img src="img/down.svg" alt="" />
+                        <img src="img/down.svg" alt="" width="10" height="7" />
                       </button>
                     </div>
                   </div>
@@ -1607,10 +1856,21 @@
 
                       <!-- start tooltip -->
                       <div class="tooltip-wrapper">
-                        <img src="img/info.svg" alt="" class="info-icon" />
+                        <img
+                          src="img/info.svg"
+                          alt=""
+                          class="info-icon"
+                          width="13"
+                          height="13"
+                        />
                         <div class="tooltip">
                           <div class="close-tooltip">
-                            <img src="img/close.svg" alt="" />
+                            <img
+                              src="img/close.svg"
+                              alt=""
+                              width="12"
+                              height="12"
+                            />
                           </div>
 
                           Lorem ipsum dolor sit amet consectetur adipisicing
@@ -1622,11 +1882,11 @@
 
                     <div class="custom-number-input">
                       <button class="arrow-up">
-                        <img src="img/up.svg" alt="" />
+                        <img src="img/up.svg" alt="" width="10" height="7" />
                       </button>
                       <input type="number" />
                       <button class="arrow-down">
-                        <img src="img/down.svg" alt="" />
+                        <img src="img/down.svg" alt="" width="10" height="7" />
                       </button>
                     </div>
                   </div>
@@ -1636,10 +1896,21 @@
                       >Translation users
                       <!-- start tooltip -->
                       <div class="tooltip-wrapper">
-                        <img src="img/info.svg" alt="" class="info-icon" />
+                        <img
+                          src="img/info.svg"
+                          alt=""
+                          class="info-icon"
+                          width="13"
+                          height="13"
+                        />
                         <div class="tooltip">
                           <div class="close-tooltip">
-                            <img src="img/close.svg" alt="" />
+                            <img
+                              src="img/close.svg"
+                              alt=""
+                              width="12"
+                              height="12"
+                            />
                           </div>
 
                           Lorem ipsum dolor sit amet consectetur adipisicing
@@ -1651,11 +1922,11 @@
 
                     <div class="custom-number-input">
                       <button class="arrow-up">
-                        <img src="img/up.svg" alt="" />
+                        <img src="img/up.svg" alt="" width="10" height="7" />
                       </button>
                       <input type="number" />
                       <button class="arrow-down">
-                        <img src="img/down.svg" alt="" />
+                        <img src="img/down.svg" alt="" width="10" height="7" />
                       </button>
                     </div>
                   </div>
@@ -1697,7 +1968,19 @@
             <div class="articles-slider__item">
               <a href="blog-single.html" class="blog__item" aria-label="Read article: Artificial Intelligence — Bridging language barriers">
                 <div class="blog__item-img-wrapper">
-                  <img src="img/blog1.png" alt="" class="blog__img" />
+                  <picture>
+                    <source
+                      srcset="img/blog1-home.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="img/blog1-home.png"
+                      alt=""
+                      class="blog__img"
+                      width="870"
+                      height="437"
+                    />
+                  </picture>
                 </div>
 
                 <div class="blog__item-title">
@@ -1715,7 +1998,19 @@
             <div class="articles-slider__item">
               <a href="blog-single.html" class="blog__item" aria-label="Read article: Artificial Intelligence — Bridging language barriers">
                 <div class="blog__item-img-wrapper">
-                  <img src="img/blog2.png" alt="" class="blog__img" />
+                  <picture>
+                    <source
+                      srcset="img/blog2-home.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="img/blog2-home.png"
+                      alt=""
+                      class="blog__img"
+                      width="830"
+                      height="414"
+                    />
+                  </picture>
                 </div>
 
                 <div class="blog__item-title">
@@ -1733,7 +2028,19 @@
             <div class="articles-slider__item">
               <a href="blog-single.html" class="blog__item" aria-label="Read article: Artificial Intelligence — Bridging language barriers">
                 <div class="blog__item-img-wrapper">
-                  <img src="img/blog3.png" alt="" class="blog__img" />
+                  <picture>
+                    <source
+                      srcset="img/blog3-home.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="img/blog3-home.png"
+                      alt=""
+                      class="blog__img"
+                      width="829"
+                      height="413"
+                    />
+                  </picture>
                 </div>
 
                 <div class="blog__item-title">
@@ -1751,7 +2058,19 @@
             <div class="articles-slider__item">
               <a href="blog-single.html" class="blog__item" aria-label="Read article: Artificial Intelligence — Bridging language barriers">
                 <div class="blog__item-img-wrapper">
-                  <img src="img/blog4.png" alt="" class="blog__img" />
+                  <picture>
+                    <source
+                      srcset="img/blog4-home.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="img/blog4-home.png"
+                      alt=""
+                      class="blog__img"
+                      width="400"
+                      height="232"
+                    />
+                  </picture>
                 </div>
 
                 <div class="blog__item-title">
@@ -1769,7 +2088,19 @@
             <div class="articles-slider__item">
               <a href="blog-single.html" class="blog__item" aria-label="Read article: Artificial Intelligence — Bridging language barriers">
                 <div class="blog__item-img-wrapper">
-                  <img src="img/blog5.png" alt="" class="blog__img" />
+                  <picture>
+                    <source
+                      srcset="img/blog5-home.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="img/blog5-home.png"
+                      alt=""
+                      class="blog__img"
+                      width="400"
+                      height="232"
+                    />
+                  </picture>
                 </div>
 
                 <div class="blog__item-title">
@@ -1787,7 +2118,19 @@
             <div class="articles-slider__item">
               <a href="blog-single.html" class="blog__item" aria-label="Read article: Artificial Intelligence — Bridging language barriers">
                 <div class="blog__item-img-wrapper">
-                  <img src="img/blog6.png" alt="" class="blog__img" />
+                  <picture>
+                    <source
+                      srcset="img/blog6-home.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      src="img/blog6-home.png"
+                      alt=""
+                      class="blog__img"
+                      width="400"
+                      height="232"
+                    />
+                  </picture>
                 </div>
 
                 <div class="blog__item-title">
@@ -1804,11 +2147,11 @@
             
           </div>
           <div class="prev prev2">
-            <img src="img/prev-purple.svg" alt="" />
+            <img src="img/prev-purple.svg" alt="" width="11" height="16" />
           </div>
 
           <div class="next next2">
-            <img src="img/next-purple.svg" alt="" />
+            <img src="img/next-purple.svg" alt="" width="11" height="16" />
           </div>
         </div>
       </div>
@@ -1824,7 +2167,12 @@
         <div class="footer__top">
           <div class="footer__logo">
             <a href="index.html">
-              <img src="img/logo.svg" alt="OneAccord — home" />
+              <img
+                src="img/logo.svg"
+                alt="OneAccord — home"
+                width="200"
+                height="65"
+              />
             </a>
           </div>
 
@@ -1856,15 +2204,15 @@
 
           <div class="footer__social">
             <a href="#" aria-label="OneAccord on Facebook">
-              <img src="img/facebook.svg" alt="" />
+              <img src="img/facebook.svg" alt="" width="36" height="36" />
             </a>
 
             <a href="#" aria-label="OneAccord on Instagram">
-              <img src="img/instagram.svg" alt="" />
+              <img src="img/instagram.svg" alt="" width="36" height="36" />
             </a>
 
             <a href="#" aria-label="OneAccord on YouTube">
-              <img src="img/youtube.svg" alt="" />
+              <img src="img/youtube.svg" alt="" width="36" height="36" />
             </a>
           </div>
         </div>
@@ -1884,7 +2232,7 @@
         <div class="cookies__buttons">
           <a href="privacy-policy.html">
             <div class="cookies__button button button--transparent">
-              <span> Learn more </span>
+              <span>Privacy policy</span>
             </div>
           </a>
 
@@ -1897,15 +2245,15 @@
     <div class="fixed-wrapper" id="fixed-wrapper">
       <div class="social-fixed">
         <a href="#" aria-label="OneAccord on Facebook">
-          <img src="img/facebook.svg" alt="" />
+          <img src="img/facebook.svg" alt="" width="38" height="38" />
         </a>
 
         <a href="#" aria-label="OneAccord on Instagram">
-          <img src="img/instagram.svg" alt="" />
+          <img src="img/instagram.svg" alt="" width="38" height="38" />
         </a>
 
         <a href="#" aria-label="OneAccord on YouTube">
-          <img src="img/youtube.svg" alt="" />
+          <img src="img/youtube.svg" alt="" width="38" height="38" />
         </a>
       </div>
 
@@ -1934,7 +2282,12 @@
     <div class="modal-window" id="exit-modal">
       <div class="modal-content exit-modal__content">
         <div class="close-btn">
-          <img src="img/close-purple.svg" alt="close button" />
+          <img
+            src="img/close-purple.svg"
+            alt="close button"
+            width="15"
+            height="15"
+          />
         </div>
 
         <!-- start exit modalcontent -->
@@ -1979,8 +2332,16 @@
                   src="img/video-cover.png"
                   alt=""
                   class="video-modal__video-cover"
+                  width="400"
+                  height="827"
                 />
-                <img src="img/phone.png" alt="" class="phone-frame" />
+                <img
+                  src="img/phone.png"
+                  alt=""
+                  class="phone-frame"
+                  width="518"
+                  height="1052"
+                />
 
                 <video
                   src="https://www.oneaccord.ai/videos/OneAccord%20demo.mp4"
@@ -1988,7 +2349,12 @@
                 ></video>
 
                 <div class="play-button">
-                  <img src="img/play.svg" alt="play button" />
+                  <img
+                    src="img/play.svg"
+                    alt="play button"
+                    width="15"
+                    height="18"
+                  />
                 </div>
               </div>
             </div>
@@ -2010,14 +2376,29 @@
 
                 <div class="modal-social__links">
                   <a href="#" aria-label="OneAccord on Facebook">
-                    <img src="img/facebook-2.svg" alt="" />
+                    <img
+                      src="img/facebook-2.svg"
+                      alt=""
+                      width="38"
+                      height="38"
+                    />
                   </a>
                   <a href="#" aria-label="OneAccord on YouTube">
-                    <img src="img/youtube-2.svg" alt="" />
+                    <img
+                      src="img/youtube-2.svg"
+                      alt=""
+                      width="37"
+                      height="37"
+                    />
                   </a>
 
                   <a href="#" aria-label="OneAccord on Instagram">
-                    <img src="img/instagram-2.svg" alt="" />
+                    <img
+                      src="img/instagram-2.svg"
+                      alt=""
+                      width="38"
+                      height="38"
+                    />
                   </a>
                 </div>
               </div>

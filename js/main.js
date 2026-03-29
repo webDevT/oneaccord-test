@@ -6,6 +6,15 @@
     else document.addEventListener("DOMContentLoaded", fn);
   }
 
+  /** Yields so LCP (hero image) can paint before heavy below-the-fold DOM work. */
+  function deferNonCritical(fn) {
+    if (typeof requestIdleCallback === "function") {
+      requestIdleCallback(fn, { timeout: 1500 });
+    } else {
+      setTimeout(fn, 1);
+    }
+  }
+
   function fadeOutElement(el, durationMs) {
     if (!el) return;
     var ms = durationMs != null ? durationMs : 300;
@@ -697,7 +706,9 @@
     initCookiesBanner();
     initModalClose();
     initExitModal();
-    initArticlesSlider();
-    initFixedWrapperScroll();
+    deferNonCritical(function () {
+      initArticlesSlider();
+      initFixedWrapperScroll();
+    });
   });
 })();
